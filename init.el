@@ -1,5 +1,5 @@
 ;; Amy's minimal emacs configuration
-;; Authored: Jun 7 2025
+;; Authored: Jun 8 2025
 
 ; Emacs configuration
 ;; Inhibit startup screen with the ugly logo and all
@@ -37,10 +37,9 @@
       minibuffer-prompt-properties
       '(read-only t cursor-intangible t face minibuffer-prompt))
 					       
-
 ;; Font configuration
 ;;; Constants
-(defconst amy/font-size 120
+(defconst amy/font-size 130
   "IDE font size, shared between fixed and variable faces.")
 
 (defconst amy/fixed-font-face "IBM Plex Mono"
@@ -117,6 +116,8 @@
   :config
   (require 'smartparens-config))
 
+;; Licence templates
+(use-package license-templates)
 
 ;; Smoooooooooth scrolling
 (use-package ultra-scroll
@@ -146,6 +147,7 @@
   (visual-line-mode 1)
   (variable-pitch-mode 1))
 
+;;; Use variable font on org files. 
 (defun amy/org-font-faces ()
   ;; Replace list hyphen with dot
   (font-lock-add-keywords 'org-mode
@@ -160,7 +162,8 @@
                   (org-level-5 . 1.1)
                   (org-level-6 . 1.1)
                   (org-level-7 . 1.1)
-                  (org-level-8 . 1.1)))
+                  (org-level-8 . 1.1)
+		  (org-document-title . 1.5)))
     (set-face-attribute (car face) nil :font amy/variable-font-face :weight 'regular :height (cdr face)))
 
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
@@ -179,8 +182,17 @@
 (use-package org
   :pin gnu
   :hook (org-mode . amy/org-setup)
+  :custom
+  (org-hide-emphasis-markers t)
   :config
   (amy/org-font-faces))
+
+;;; Make tables prettier
+(use-package org-pretty-table
+  :vc (:url "https://github.com/Fuco1/org-pretty-table")
+  :hook org-mode
+  :custom
+  (org-pretty-table-charset "╭╮╰╯┬┤┴├┼─│"))
 
 ;; Theme
 (use-package inkpot-theme

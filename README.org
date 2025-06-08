@@ -1,0 +1,35 @@
+#+title: My emacs configuration
+
+This is my own personal emacs configuration written from scratch with a little help from [[https://github.com/daviwil/emacs-from-scratch][SystemCrafters' Emacs from Scratch series.]]
+
+* Features
+
+|--------------+------------------------------------------------------|
+| Type         | Packages                                             |
+|--------------+------------------------------------------------------|
+| Programming  | smartparens, rainbow-delimiters, clojure-mode, cider |
+| Writting     | org, license-templates                               |
+| Minibuffer   | vertico, marginalia                                  |
+| Completion   | corfu, orderless                                     |
+| UI           | goggles, ultra-scroll                                |
+| Theme        | inkpot-theme                                         |
+| Visual Flair | org-pretty-table                                     |
+|--------------+------------------------------------------------------|
+
+** Non-Emacs dependencies
+This configuration implicitly depends on both IBM Plex Mono and IBM Plex Sans fonts, but can be configured by editing the ~amy/fixed-font-face~ and ~amy/variable-font-face~ constants in the "Font configuration" section.
+
+* Installation
+
+Clone this repository into your emacs user directory (usually ~.emacs.d~, but ~.config/emacs~ works as well.) and run emacs.
+
+#+begin_src bash  
+  # Clone the repository
+  git clone https://github.com/amycatgirl/emacs.git ~/.emacs.d
+
+  # Launch emacs to install packages
+  emacs
+#+end_src
+
+* Licence
+This project is licensed under the [[file:LICENCE][MIT Licence]].
