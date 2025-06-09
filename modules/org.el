@@ -21,7 +21,7 @@
                   (org-level-7 . 1.1)
                   (org-level-8 . 1.1)
 		  (org-document-title . 1.5)))
-    (set-face-attribute (car face) nil :font amy/variable-font-face :weight 'regular :height (cdr face)))
+    (set-face-attribute (car face) nil :font amy/variable-font-face :weight 'semi-bold :height (cdr face)))
 
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
   (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
@@ -36,10 +36,23 @@
   (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
   (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch))
 
+
+(defun amy/org-babel-setup ()
+  (require 'org-tempo) ;; Load org Templates
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((bash . t)
+     (clojure . t)
+     (js . t)
+     (elisp . t)
+     (lisp . t)))
+  )
+
 (use-package org
   :pin gnu
   :hook (org-mode . amy/org-setup)
   :custom
   (org-hide-emphasis-markers t)
   :config
-  (amy/org-font-faces))
+  (amy/org-font-faces)
+  (amy/org-babel-setup))
