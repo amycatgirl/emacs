@@ -36,7 +36,6 @@
   (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
   (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch))
 
-
 (defun amy/org-babel-setup ()
   (require 'org-tempo) ;; Load org Templates
   (org-babel-do-load-languages
@@ -45,8 +44,7 @@
      (clojure . t)
      (js . t)
      (elisp . t)
-     (lisp . t)))
-  )
+     (lisp . t))))
 
 (use-package org
   :pin gnu
