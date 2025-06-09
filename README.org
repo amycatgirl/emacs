@@ -4,20 +4,24 @@ This is my own personal emacs configuration written from scratch with a little h
 
 * Features
 
-|--------------+------------------------------------------------------|
-| Type         | Packages                                             |
-|--------------+------------------------------------------------------|
-| Programming  | smartparens, rainbow-delimiters, clojure-mode, cider |
-| Writting     | org, license-templates                               |
-| Minibuffer   | vertico, marginalia                                  |
-| Completion   | corfu, orderless                                     |
-| UI           | goggles, ultra-scroll                                |
-| Theme        | inkpot-theme                                         |
-| Visual Flair | org-pretty-table                                     |
-|--------------+------------------------------------------------------|
+|--------------+--------------------------------------------------------------------|
+| Type         | Packages                                                           |
+|--------------+--------------------------------------------------------------------|
+| Programming  | Too many packages to list here, see the "LSP, Treesitter" section. |
+| Writting     | org, license-templates                                             |
+| Minibuffer   | vertico, marginalia                                                |
+| Completion   | corfu, orderless                                                   |
+| UI           | goggles, ultra-scroll                                              |
+| Theme        | inkpot-theme                                                       |
+| Visual Flair | org-pretty-table                                                   |
+|--------------+--------------------------------------------------------------------|
 
 ** Non-Emacs dependencies
 This configuration implicitly depends on both IBM Plex Mono and IBM Plex Sans fonts, but can be configured by editing the ~amy/fixed-font-face~ and ~amy/variable-font-face~ constants in the "Font configuration" section.
+
+
+* TODO LSP, Treesitter
+Document eglot, flycheck
 
 * Installation
 

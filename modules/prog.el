@@ -8,5 +8,13 @@
   :config
   (require 'smartparens-config))
 
+;; Automatically set up treesit-modes
+(use-package treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+
 ;; Licence templates
 (use-package license-templates)

@@ -56,6 +56,19 @@
 ;; Diminish (to remove certain minor modes from our status line)
 (use-package diminish)
 
+;; Less garbage :)
+(use-package no-littering)
+
+;; Automatic package updates
+(use-package auto-package-update
+  :custom
+  (auto-package-update-interval 7)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-hide-results t)
+  :config
+  (auto-package-update-maybe)
+  (auto-package-update-at-time "09:00"))
+
 ;; Vertico recommendations
 (setf context-menu-mode t
       enable-recursive-minibuffers t
